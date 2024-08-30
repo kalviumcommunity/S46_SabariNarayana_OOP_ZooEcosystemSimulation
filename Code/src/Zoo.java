@@ -5,23 +5,24 @@ public class Zoo {
     private List<Animal> animals;
 
     public Zoo() {
-        animals = new ArrayList<>();
+        // Using 'this' to refer to the current object's variable
+        this.animals = new ArrayList<>();
     }
 
     public void addAnimal(Animal animal) {
-        animals.add(animal);
+        this.animals.add(animal); // Using 'this' to refer to the current object's list
         System.out.println(animal.getName() + " the " + animal.getSpecies() + " has been added to the zoo.");
     }
 
     public void showAnimals() {
         System.out.println("Animals in the zoo:");
-        for (Animal animal : animals) {
+        for (Animal animal : this.animals) { // Using 'this' to refer to the current object's list
             System.out.println(animal.getName() + " the " + animal.getSpecies());
         }
     }
 
-    // New method to get the list of animals
+    // Method to get the list of animals
     public List<Animal> getAnimals() {
-        return animals;
+        return this.animals; // Using 'this' to refer to the current object's list
     }
 }

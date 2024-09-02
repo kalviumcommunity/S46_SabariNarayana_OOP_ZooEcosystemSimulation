@@ -1,19 +1,23 @@
-public class Animal {
+class Animal {
     private String name;
     private String species;
+    private int id;
+    private static int nextId = 1;  // Static variable to generate unique IDs
+    private static int totalAnimals = 0;  // Static variable to count total animals
 
     public Animal(String name, String species) {
-        // Using 'this' to refer to the current object's variables
         this.name = name;
         this.species = species;
+        this.id = nextId++;
+        totalAnimals++;
     }
 
     public String getName() {
-        return this.name; // Using 'this' to access the current object's name
+        return this.name;
     }
 
     public String getSpecies() {
-        return this.species; // Using 'this' to access the current object's species
+        return this.species;
     }
 
     public void eat() {
@@ -22,5 +26,19 @@ public class Animal {
 
     public void move() {
         System.out.println(this.name + " the " + this.species + " is moving."); // Using 'this' in a method
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public static int getTotalAnimals() {
+        return totalAnimals;
+    }
+
+    // Overrides the toString() method to provide a custom string representation of the Animal object.
+    @Override
+    public String toString() {
+        return "Animal ID: " + id + ", Name: " + name + ", Species: " + species;
     }
 }

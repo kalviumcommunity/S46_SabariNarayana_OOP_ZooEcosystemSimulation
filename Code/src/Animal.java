@@ -20,6 +20,14 @@ class Animal {
         return this.species;
     }
 
+    public void eat() {
+        System.out.println(this.name + " the " + this.species + " is eating."); // Using 'this' in a method
+    }
+
+    public void move() {
+        System.out.println(this.name + " the " + this.species + " is moving."); // Using 'this' in a method
+    }
+
     public int getId() {
         return this.id;
     }
@@ -28,6 +36,7 @@ class Animal {
         return totalAnimals;
     }
 
+    // Overrides the toString() method to provide a custom string representation of the Animal object.
     @Override
     public String toString() {
         return "Animal ID: " + id + ", Name: " + name + ", Species: " + species;

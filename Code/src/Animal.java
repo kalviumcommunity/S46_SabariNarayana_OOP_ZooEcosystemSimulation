@@ -2,14 +2,13 @@ class Animal {
     private String name;
     private String species;
     private int id;
-    private static int nextId = 1;  // Static variable to generate unique IDs
+    // Static variable to track the total number of animals
     private static int totalAnimals = 0;  // Static variable to count total animals
 
     public Animal(String name, String species) {
         this.name = name;
         this.species = species;
-        this.id = nextId++;
-        totalAnimals++;
+        this.id = ++totalAnimals;
     }
 
     public String getName() {
@@ -32,6 +31,7 @@ class Animal {
         return this.id;
     }
 
+    // Static function to get the total number of animals
     public static int getTotalAnimals() {
         return totalAnimals;
     }

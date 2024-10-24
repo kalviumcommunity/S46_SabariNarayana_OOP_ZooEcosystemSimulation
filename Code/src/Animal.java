@@ -1,4 +1,4 @@
-class Animal {
+abstract class Animal {
     private String name;           // Private: Only accessible within the Animal class
     private String species;        // Private: Only accessible within the Animal class
     private int id;                // Private: Only accessible within the Animal class
@@ -20,6 +20,10 @@ class Animal {
         this.id = nextId++;
         totalAnimals++;
     }
+
+    // Abstract method (no implementation)
+    public abstract void makeSound(); // This is a virtual function
+
 
     // Public accessors: Accessible from outside the class
     public String getName() {

@@ -9,8 +9,7 @@ class Animal {
     public Animal(String name, String species) {
         this.name = name;
         this.species = species;
-        this.id = nextId++;
-        totalAnimals++;
+        this.id = ++totalAnimals;
     }
 
     // Public accessors: Accessible from outside the class
@@ -26,6 +25,7 @@ class Animal {
         return this.id;
     }
 
+    // Static function to get the total number of animals
     public static int getTotalAnimals() {
         return totalAnimals;
     }

@@ -2,18 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Zoo {
-    private List<Animal> animals;
+    private List<Animal> animals; // Private: Accessible only within the Zoo class
 
+    // Public constructor: Accessible from other classes to create Zoo objects
     public Zoo() {
         // Using 'this' to refer to the current object's variable
         this.animals = new ArrayList<>();
     }
 
+    // Public method to add an animal: Accessible from outside the class
     public void addAnimal(Animal animal) {
         this.animals.add(animal); // Using 'this' to refer to the current object's list
         System.out.println(animal.getName() + " the " + animal.getSpecies() + " has been added to the zoo.");
     }
 
+    // Public method to show animals: Accessible from outside the class
     public void showAnimals() {
         System.out.println("Animals in the zoo:");
         for (Animal animal : this.animals) { // Using 'this' to refer to the current object's list
@@ -21,12 +24,12 @@ public class Zoo {
         }
     }
 
-    // Accessor method to get the list of animals (you may consider returning a copy to preserve encapsulation)
+    // Public accessor method to get a copy of the list of animals
     public List<Animal> getAnimals() {
         return new ArrayList<>(this.animals); // Returns a copy of the list
     }
 
-    // Mutator method to remove an animal by ID (demonstrating more encapsulation)
+    // Public method to remove an animal: Accessible from outside the class
     public boolean removeAnimal(int id) {
         for (Animal animal : this.animals) {
             if (animal.getId() == id) {

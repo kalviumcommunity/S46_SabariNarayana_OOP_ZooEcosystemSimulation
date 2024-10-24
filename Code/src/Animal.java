@@ -1,10 +1,11 @@
 class Animal {
-    private String name;
-    private String species;
-    private int id;
-    private static int nextId = 1;  // Static variable to generate unique IDs
-    private static int totalAnimals = 0;  // Static variable to count total animals
+    private String name;           // Private: Only accessible within the Animal class
+    private String species;        // Private: Only accessible within the Animal class
+    private int id;                // Private: Only accessible within the Animal class
+    private static int nextId = 1; // Static variable, should be private to prevent external modification
+    private static int totalAnimals = 0; // Static variable, should be private to prevent external modification
 
+    // Public constructor: Accessible from other classes to create Animal objects
     public Animal(String name, String species) {
         this.name = name;
         this.species = species;
@@ -12,7 +13,7 @@ class Animal {
         totalAnimals++;
     }
 
-    // Accessor methods
+    // Public accessors: Accessible from outside the class
     public String getName() {
         return this.name;
     }
@@ -29,7 +30,7 @@ class Animal {
         return totalAnimals;
     }
 
-    // Mutator method
+    // Public mutators: Allows controlled modification of private fields
     public void setName(String name) {
         this.name = name;
     }

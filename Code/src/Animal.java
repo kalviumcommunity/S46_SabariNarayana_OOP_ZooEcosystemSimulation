@@ -51,6 +51,16 @@ class Animal {
         System.out.println(this.name + " the " + this.species + " is eating."); // Using 'this' in a method
     }
 
+    // Overloaded eat method with one parameter
+    public void eat(String food) {
+        System.out.println(this.name + " the " + this.species + " is eating " + food + ".");
+    }
+
+    // Overloaded eat method with two parameters
+    public void eat(String food, int quantity) {
+        System.out.println(this.name + " the " + this.species + " is eating " + quantity + " units of " + food + ".");
+    }
+
     public void move() {
         System.out.println(this.name + " the " + this.species + " is moving."); // Using 'this' in a method
     }

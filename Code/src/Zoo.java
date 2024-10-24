@@ -2,11 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Zoo {
-    private List<Animal> animals; // Private: Accessible only within the Zoo class
+    private List<Animal> animals;
 
-    // Public constructor: Accessible from other classes to create Zoo objects
     public Zoo() {
-        // Using 'this' to refer to the current object's variable
         this.animals = new ArrayList<>();
     }
 

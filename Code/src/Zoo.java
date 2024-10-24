@@ -21,8 +21,21 @@ public class Zoo {
         }
     }
 
-    // Method to get the list of animals
+    // Accessor method to get the list of animals (you may consider returning a copy to preserve encapsulation)
     public List<Animal> getAnimals() {
-        return this.animals; // Using 'this' to refer to the current object's list
+        return new ArrayList<>(this.animals); // Returns a copy of the list
+    }
+
+    // Mutator method to remove an animal by ID (demonstrating more encapsulation)
+    public boolean removeAnimal(int id) {
+        for (Animal animal : this.animals) {
+            if (animal.getId() == id) {
+                this.animals.remove(animal);
+                System.out.println(animal.getName() + " has been removed from the zoo.");
+                return true;
+            }
+        }
+        System.out.println("No animal found with ID: " + id);
+        return false;
     }
 }

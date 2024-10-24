@@ -12,6 +12,7 @@ class Animal {
         totalAnimals++;
     }
 
+    // Accessor methods
     public String getName() {
         return this.name;
     }
@@ -20,20 +21,29 @@ class Animal {
         return this.species;
     }
 
-    public void eat() {
-        System.out.println(this.name + " the " + this.species + " is eating."); // Using 'this' in a method
-    }
-
-    public void move() {
-        System.out.println(this.name + " the " + this.species + " is moving."); // Using 'this' in a method
-    }
-
     public int getId() {
         return this.id;
     }
 
     public static int getTotalAnimals() {
         return totalAnimals;
+    }
+
+    // Mutator method
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSpecies(String species) {
+        this.species = species;
+    }
+
+    public void eat() {
+        System.out.println(this.name + " the " + this.species + " is eating."); // Using 'this' in a method
+    }
+
+    public void move() {
+        System.out.println(this.name + " the " + this.species + " is moving."); // Using 'this' in a method
     }
 
     // Overrides the toString() method to provide a custom string representation of the Animal object.

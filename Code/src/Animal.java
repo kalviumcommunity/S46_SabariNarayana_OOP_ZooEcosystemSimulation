@@ -5,7 +5,15 @@ class Animal {
     private static int nextId = 1; // Static variable, should be private to prevent external modification
     private static int totalAnimals = 0; // Static variable, should be private to prevent external modification
 
-    // Public constructor: Accessible from other classes to create Animal objects
+    // Default constructor: Initializes with default values
+    public Animal() {
+        this.name = "Unknown";
+        this.species = "Unknown";
+        this.id = nextId++;
+        totalAnimals++;
+    }
+
+    // Parameterized constructor: Initializes with provided values
     public Animal(String name, String species) {
         this.name = name;
         this.species = species;

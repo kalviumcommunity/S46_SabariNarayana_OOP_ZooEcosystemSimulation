@@ -4,8 +4,8 @@ public class ZooSimulation {
         for (Animal animal : zoo.getAnimals()) {
             System.out.println(animal);
             animal.eat();
-            animal.move();
-            animal.makeSound(); // New behavior added without modifying the Animal class
+            animal.move();       // Calls overridden move method
+            animal.makeSound();  // Calls overridden makeSound method
         }
     }
 }

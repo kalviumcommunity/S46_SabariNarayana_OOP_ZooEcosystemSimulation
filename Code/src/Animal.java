@@ -1,16 +1,9 @@
-public class Animal {
+public abstract class Animal {
     private String name;
     private String species;
     private int id;
     private static int nextId = 1;
     private static int totalAnimals = 0;
-
-    public Animal() {
-        this.name = "Unknown";
-        this.species = "Unknown";
-        this.id = nextId++;
-        totalAnimals++;
-    }
 
     public Animal(String name, String species) {
         this.name = name;
@@ -34,6 +27,9 @@ public class Animal {
     public static int getTotalAnimals() {
         return totalAnimals;
     }
+
+    // Abstract method for sound
+    public abstract void makeSound();
 
     public void eat() {
         System.out.println(this.name + " the " + this.species + " is eating.");
